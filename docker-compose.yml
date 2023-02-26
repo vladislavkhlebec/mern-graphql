@@ -1,0 +1,53 @@
+version: '3.7'
+services:
+  frontend:
+    build: web
+    container_name: web
+    restart: always
+    ports:
+      - 3000:3000
+    stdin_open: true
+    volumes:
+      - ./web:/app
+      - /app/node_modules
+    networks:
+      - react-express
+    depends_on:
+      - backend
+  backend:
+    build: server
+    container_name: server
+    restart: always
+    ports:
+      - 4000:4000
+    environment:
+      - MONGO_URI=mongodb://root:rootpassword@mongo:27017
+    volumes:
+      - ./server:/app
+      - /app/node_modules
+    depends_on:
+      - mongo
+    networks:
+      - express-mongo
+      - react-express
+  mongo:
+    image: mongo:latest
+    container_name: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: rootpassword
+    networks:
+      - express-mongo
+    expose:
+      - 27017
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb_data_container:/data/db
+
+networks:
+  react-express:
+  express-mongo:
+
+volumes:
+  mongodb_data_container:

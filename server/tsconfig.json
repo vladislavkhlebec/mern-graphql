@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    "target": "ES2018",
+    "module": "commonjs",
+    "declaration": true,
+    "sourceMap": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+
+    "strict": true,
+
+    "noUnusedLocals": true,
+
+    "esModuleInterop": true,
+
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+//    "module": "commonjs",
+//    "moduleResolution": "node",
+//    "declaration": true,
+//    "removeComments": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+//    "target": "es2020",
+//    "sourceMap": true,
+    "isolatedModules": true,
+//    "noEmit": true,
+//    "incremental": true,
+//    "skipLibCheck": true,
+//    "strictNullChecks": false,
+    "noImplicitAny": false,
+//    "strictBindCallApply": false,
+//    "forceConsistentCasingInFileNames": true,
+//    "noFallthroughCasesInSwitch": false,
+//    "strict": true,
+//    "outDir": "./dist",
+//    "resolveJsonModule": true
+  },
+  "include": ["./src"],
+  "exclude": ["node_modules"]
+}

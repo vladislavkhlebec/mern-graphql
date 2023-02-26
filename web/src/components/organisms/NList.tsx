@@ -34,6 +34,8 @@ const NList: React.FC<IProps> = ({ data }) => {
   const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
   const [selected, setSelected] = useState<TNote | null>(null);
 
+  // TODO: can be rewrite with cache
+
   const [addNote, { data: addNoteData }] = useMutation(ADD_NOTE, {
     refetchQueries: [{ query: All_NOTES_QUERY }]
   });

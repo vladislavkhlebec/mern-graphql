@@ -28,7 +28,7 @@ const TitleContainer = styled('div')`
 `;
 
 const validationSchema = yup.object({
-  title: yup.string().required('Email is required')
+  title: yup.string().required('Title is required')
 });
 
 export interface INoteFormFields {
