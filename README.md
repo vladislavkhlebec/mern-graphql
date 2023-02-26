@@ -10,4 +10,8 @@
 docker-compose up -d --build
 ```
 
-This will start backend, frontend and MongoDB.
+
+
+This will start backend(localhost:4000), frontend (localhost:3000) and MongoDB.
+
+Check graphql queries - localhost:4000/graphql
